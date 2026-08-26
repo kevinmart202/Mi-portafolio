@@ -1,4 +1,4 @@
-import profileImage from '../../img/watermarked_img_8862386015648288976.jpg'
+const profileImage = '/img/watermarked_img_8862386015648288976.jpg'
 
 export default function About() {
   const datos = [

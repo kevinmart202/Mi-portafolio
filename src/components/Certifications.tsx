@@ -1,7 +1,7 @@
-import spssCertificate from '../../img/Certificados/Analisis en SSPS/Certificado_0931796932_es.pdf'
-import awsCertificate from '../../img/Certificados/AWS/Certificado - Curso de Fundamentos de AWS (1).pdf'
-import pythonCertificate from '../../img/Certificados/Python/qr_certificado_142533.pdf'
-import aiCertificate from '../../img/Certificados/IA/WhatsApp Image 2026-08-22 at 22.07.52.jpeg'
+const spssCertificate = '/img/Certificados/Analisis en SSPS/Certificado_0931796932_es.pdf'
+const awsCertificate = '/img/Certificados/AWS/Certificado - Curso de Fundamentos de AWS (1).pdf'
+const pythonCertificate = '/img/Certificados/Python/qr_certificado_142533.pdf'
+const aiCertificate = '/img/Certificados/IA/WhatsApp Image 2026-08-22 at 22.07.52.jpeg'
 
 interface Cert {
   titulo: string
@@ -21,7 +21,7 @@ const certificaciones: Cert[] = [
     titulo: 'Curso de Fundamentos de AWS',
     institucion: 'Código Facilito',
     archivo: awsCertificate,
-    color: '#ff9900',
+    color: '#b5f23d',
   },
   {
     titulo: 'Python (Dominio Medio - Avanzado)',
