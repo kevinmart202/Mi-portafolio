@@ -1,5 +1,5 @@
 const spssCertificate = '/img/Certificados/Analisis en SSPS/Certificado_0931796932_es.pdf'
-const awsCertificate = '/img/Certificados/AWS/Certificado - Curso de Fundamentos de AWS (1).pdf'
+const awsCertificate = '/img/Certificados/AWS/WhatsApp Image 2026-08-26 at 19.22.32.jpeg'
 const pythonCertificate = '/img/Certificados/Python/qr_certificado_142533.pdf'
 const aiCertificate = '/img/Certificados/IA/WhatsApp Image 2026-08-22 at 22.07.52.jpeg'
 
