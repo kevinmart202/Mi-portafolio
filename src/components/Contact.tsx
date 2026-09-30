@@ -7,14 +7,12 @@ const redesSociales = [
   {
     nombre: 'Email',
     handle: 'kevinmart2028@gmail.com',
-    href: 'mailto:kevinmart2028@gmail.com',
     icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>,
     color: '#b5f23d',
   },
   {
     nombre: 'Teléfono / WhatsApp',
     handle: '0983478695',
-    href: 'tel:+593983478695',
     icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>,
     color: '#34d399',
   },
@@ -145,19 +143,34 @@ export default function Contact() {
           <div>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: '#475569', marginBottom: '18px', letterSpacing: '0.1em' }}>{'// encuéntrame en'}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '40px' }}>
-              {redesSociales.map(r => (
-                <a key={r.nombre} href={r.href} target="_blank" rel="noopener noreferrer"
-                  style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 18px', background: '#0b100b', border: '1px solid #1a2e1a', borderRadius: '6px', textDecoration: 'none', color: 'inherit', transition: 'all 0.2s' }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = r.color + '40'; e.currentTarget.style.background = r.color + '08' }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = '#1a2e1a'; e.currentTarget.style.background = '#0b100b' }}>
-                  <span style={{ color: r.color, display: 'flex' }}>{r.icon}</span>
-                  <div>
-                    <div style={{ fontFamily: 'var(--font-body)', fontWeight: 500, fontSize: '0.9rem', color: '#f1f5f9' }}>{r.nombre}</div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: '#dbeafe', fontWeight: 500, marginTop: '2px' }}>{r.handle}</div>
+              {redesSociales.map(r => {
+                const contenido = (
+                  <>
+                    <span style={{ color: r.color, display: 'flex' }}>{r.icon}</span>
+                    <div>
+                      <div style={{ fontFamily: 'var(--font-body)', fontWeight: 500, fontSize: '0.9rem', color: '#f1f5f9' }}>{r.nombre}</div>
+                      <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: '#dbeafe', fontWeight: 500, marginTop: '2px' }}>{r.handle}</div>
+                    </div>
+                    {r.href && (
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2d4a2d" strokeWidth="2" style={{ marginLeft: 'auto' }}><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    )}
+                  </>
+                )
+                const cardStyle = { display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 18px', background: '#0b100b', border: '1px solid #1a2e1a', borderRadius: '6px', color: 'inherit' }
+
+                return r.href ? (
+                  <a key={r.nombre} href={r.href} target="_blank" rel="noopener noreferrer"
+                    style={{ ...cardStyle, textDecoration: 'none', transition: 'all 0.2s' }}
+                    onMouseEnter={e => { e.currentTarget.style.borderColor = r.color + '40'; e.currentTarget.style.background = r.color + '08' }}
+                    onMouseLeave={e => { e.currentTarget.style.borderColor = '#1a2e1a'; e.currentTarget.style.background = '#0b100b' }}>
+                    {contenido}
+                  </a>
+                ) : (
+                  <div key={r.nombre} style={cardStyle}>
+                    {contenido}
                   </div>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2d4a2d" strokeWidth="2" style={{ marginLeft: 'auto' }}><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-              ))}
+                )
+              })}
             </div>
 
             {/* Disponibilidad */}
