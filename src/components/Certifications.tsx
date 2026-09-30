@@ -1,7 +1,7 @@
 const spssCertificate = '/img/Certificados/Analisis en SSPS/Certificado_0931796932_es.pdf'
 const awsCertificate = '/img/Certificados/AWS/WhatsApp Image 2026-08-26 at 19.22.32.jpeg'
 const pythonCertificate = '/img/Certificados/Python/qr_certificado_142533.pdf'
-const aiCertificate = '/img/Certificados/IA/WhatsApp Image 2026-08-22 at 22.07.52.jpeg'
+const espolCertificate = '/img/Certificados/espol/Educación Continua de la ESPOL.pdf'
 
 interface Cert {
   titulo: string
@@ -30,9 +30,9 @@ const certificaciones: Cert[] = [
     color: '#b5f23d',
   },
   {
-    titulo: 'Pensamiento Digital en la Era de la Inteligencia Artificial',
-    institucion: 'Universidad de Especialidades Espíritu Santo (UEES)',
-    archivo: aiCertificate,
+    titulo: 'Desarrollo de aplicaciones web full stack desplegadas en infraestructuras cloud',
+    institucion: 'ESPOL — Educación Continua',
+    archivo: espolCertificate,
     color: '#b5f23d',
   },
 ]
